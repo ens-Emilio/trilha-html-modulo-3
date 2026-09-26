@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img"
+     aria-label="Ilustração de uma esfera de chakra giratória com espirais concêntricas">
+  <defs>
+    <radialGradient id="chakra" cx="45%" cy="40%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#bae6fd"/>
+      <stop offset="70%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="#0f1a30"/>
+  <circle cx="200" cy="200" r="150" fill="url(#chakra)"/>
+  <g fill="none" stroke="#ffffff" stroke-width="4" opacity="0.75" stroke-linecap="round">
+    <path d="M200 200 m-120 0 a120 120 0 1 1 120 120 a100 100 0 1 1 -100 -100 a80 80 0 1 1 80 80 a60 60 0 1 1 -60 -60 a40 40 0 1 1 40 40 a20 20 0 1 1 -20 -20"/>
+    <path d="M60 120 Q200 60 340 120" opacity="0.5"/>
+    <path d="M60 280 Q200 340 340 280" opacity="0.5"/>
+  </g>
+  <circle cx="200" cy="200" r="26" fill="#ffffff" opacity="0.9"/>
+</svg>

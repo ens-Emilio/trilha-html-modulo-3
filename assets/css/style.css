@@ -1,0 +1,625 @@
+/* ==========================================================================
+   NarutoPédia — folha de estilo principal
+   Desafio de Projeto — Módulo III (Semântica e Acessibilidade)
+   --------------------------------------------------------------------------
+   Decisões de acessibilidade aplicadas neste arquivo:
+   - Contraste mínimo de 4.5:1 em todo texto (verificado com cálculo WCAG)
+   - Foco SEMPRE visível (:focus-visible) com contorno de 3px
+   - Skip link para pular a navegação repetitiva
+   - Alvos de toque com no mínimo 44x44px
+   - Layout que funciona sem CSS (HTML semântico ordenado)
+   - Respeito a "prefers-reduced-motion"
+   - Nenhuma informação transmitida apenas por cor
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Variáveis de design (design tokens)
+   -------------------------------------------------------------------------- */
+:root {
+    --azul-noite: #14213d;
+    --azul-medio: #2d3f6b;
+    --laranja-texto: #c2410c;   /* 5.18:1 sobre branco — AA para texto */
+    --laranja-vivo: #f97316;    /* uso decorativo/bordas, não texto pequeno */
+    --laranja-claro: #fbbf24;   /* 9.57:1 sobre azul-noite */
+    --texto: #4a4a4a;           /* 8.86:1 sobre branco */
+    --texto-suave: #6b6b6b;     /* 5.4:1 sobre branco */
+    --fundo: #fffaf5;
+    --fundo-alt: #fff7ed;
+    --borda: #e5e0d8;
+    --branco: #ffffff;
+
+    --fonte-titulo: Georgia, 'Times New Roman', Times, serif;
+    --fonte-corpo: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    --raio: 8px;
+    --sombra: 0 1px 3px rgba(20, 33, 61, 0.10);
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset e base
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fonte-corpo);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--texto);
+    background-color: var(--fundo);
+}
+
+/* --------------------------------------------------------------------------
+   3. SKIP LINK — primeiro elemento focável da página
+   Permite que usuários de teclado e leitores de tela pulem o cabeçalho
+   e o menu repetidos em todas as páginas.
+   -------------------------------------------------------------------------- */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 9999;
+    padding: 14px 24px;
+    background-color: var(--azul-noite);
+    color: var(--branco);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 0 0 var(--raio) 0;
+}
+
+.skip-link:focus {
+    left: 0;
+    outline: 3px solid var(--laranja-claro);
+    outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   4. FOCO VISÍVEL — requisito WCAG 2.4.7 e 2.4.11
+   Nunca remover o outline sem oferecer um substituto visível.
+   -------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--laranja-texto);
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+/* Links e elementos interativos */
+a {
+    color: var(--laranja-texto);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    color: var(--azul-noite);
+    background-color: #ffedd5;
+}
+
+/* Marca o alvo atual da âncora para quem navega por links internos */
+:target {
+    scroll-margin-top: 1rem;
+}
+
+:target > h2,
+:target > h3 {
+    background-color: #ffedd5;
+    border-left: 4px solid var(--laranja-vivo);
+    padding-left: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   5. CABEÇALHO
+   -------------------------------------------------------------------------- */
+.cabecalho {
+    background-color: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    padding: 14px 1rem;
+}
+
+.cabecalho__interno {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo img {
+    display: block;
+    width: 200px;
+    height: auto;
+}
+
+.logo:hover {
+    background-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   6. BARRA DE PESQUISA
+   -------------------------------------------------------------------------- */
+.barra {
+    background-color: #f9f9fb;
+    padding: 15px 1rem;
+    border-bottom: 1px solid var(--borda);
+}
+
+.barra__interno {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Rótulo visível apenas para leitores de tela, mas presente no DOM */
+.visualmente-oculto {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.barra input[type="search"] {
+    flex: 1 1 240px;
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--texto);
+    background-color: var(--branco);
+    border: 2px solid #b9b3a8;
+    border-radius: var(--raio);
+}
+
+.barra button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: bold;
+    color: var(--branco);
+    background-color: var(--azul-noite);
+    border: 2px solid var(--azul-noite);
+    border-radius: var(--raio);
+    cursor: pointer;
+}
+
+.barra button:hover {
+    background-color: var(--azul-medio);
+}
+
+/* --------------------------------------------------------------------------
+   7. LAYOUT PRINCIPAL (grade de três colunas)
+   -------------------------------------------------------------------------- */
+.conteudo {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+    grid-template-areas: "lateral principal ancora";
+    grid-template-columns: minmax(0, 15rem) minmax(0, 2.5fr) minmax(0, 15rem);
+    padding: 1.5rem 1rem;
+}
+
+.lateral {
+    grid-area: lateral;
+    border-right: 1px solid var(--borda);
+    padding-right: 1rem;
+}
+
+.principal {
+    grid-area: principal;
+    min-width: 0;
+}
+
+.ancoras {
+    grid-area: ancora;
+    border-left: 1px solid var(--borda);
+    padding-left: 1rem;
+}
+
+/* Títulos dos painéis laterais */
+.lateral h2,
+.ancoras h2 {
+    font-family: var(--fonte-corpo);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--texto-suave);
+    border-bottom: 2px solid var(--laranja-vivo);
+    padding-bottom: 6px;
+    margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   8. NAVEGAÇÃO
+   -------------------------------------------------------------------------- */
+.lateral ul,
+.ancoras ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.lateral li,
+.ancoras li {
+    margin-bottom: 2px;
+}
+
+.lateral a,
+.ancoras a {
+    display: block;
+    min-height: 44px;
+    padding: 10px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--laranja-texto);
+    border-left: 3px solid transparent;
+}
+
+.lateral a:hover,
+.ancoras a:hover {
+    background-color: #ffedd5;
+    border-left-color: var(--laranja-vivo);
+}
+
+/* Item da página atual: marcado com cor E com borda + negrito,
+   para não depender apenas da cor (WCAG 1.4.1) */
+.lateral a[aria-current="page"] {
+    background-color: #ffedd5;
+    border-left: 3px solid var(--laranja-texto);
+    color: var(--azul-noite);
+    font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------
+   9. TIPOGRAFIA DO ARTIGO
+   -------------------------------------------------------------------------- */
+.principal h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.1rem;
+    line-height: 1.25;
+    color: var(--azul-noite);
+    border-bottom: 3px solid var(--laranja-vivo);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.principal h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    color: var(--azul-noite);
+    border-bottom: 1px solid var(--borda);
+    padding-bottom: 6px;
+    margin-top: 2.2rem;
+}
+
+.principal h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    color: var(--azul-medio);
+    margin-top: 1.6rem;
+}
+
+.principal p {
+    margin: 1rem 0;
+}
+
+/* Abreviações: sublinhado pontilhado + cursor de ajuda.
+   O significado completo fica no atributo title, lido por leitores de tela. */
+abbr[title] {
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+    cursor: help;
+}
+
+/* Citação longa */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 14px 20px;
+    background-color: var(--fundo-alt);
+    border-left: 5px solid var(--laranja-vivo);
+    border-radius: 0 var(--raio) var(--raio) 0;
+    font-style: italic;
+}
+
+blockquote p {
+    margin: 0.4rem 0;
+}
+
+blockquote footer {
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+/* Destaque */
+mark {
+    background-color: #fde68a;
+    color: var(--azul-noite);
+    padding: 1px 4px;
+    border-radius: 3px;
+}
+
+/* Caixa de aviso */
+.aviso {
+    background-color: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 5px solid var(--laranja-vivo);
+    border-radius: 0 var(--raio) var(--raio) 0;
+    padding: 14px 18px;
+    margin: 1.5rem 0;
+}
+
+.aviso h3 {
+    margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   10. FIGURAS E IMAGENS
+   -------------------------------------------------------------------------- */
+figure {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--raio);
+    border: 1px solid var(--borda);
+}
+
+figcaption {
+    font-size: 0.875rem;
+    color: var(--texto-suave);
+    margin-top: 8px;
+    text-align: center;
+}
+
+.hero {
+    margin: 0 0 1.5rem;
+}
+
+.hero img {
+    width: 100%;
+    border: none;
+}
+
+/* --------------------------------------------------------------------------
+   11. TABELAS
+   -------------------------------------------------------------------------- */
+.tabela-envolucro {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+caption {
+    caption-side: top;
+    text-align: left;
+    font-weight: bold;
+    color: var(--azul-noite);
+    padding-bottom: 8px;
+}
+
+th,
+td {
+    border: 1px solid #d9d3c9;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+thead th {
+    background-color: var(--azul-noite);
+    color: var(--branco);
+}
+
+tbody th {
+    background-color: var(--fundo-alt);
+    color: var(--azul-noite);
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #fdfcf9;
+}
+
+/* --------------------------------------------------------------------------
+   12. LISTAS DE CONTEÚDO
+   -------------------------------------------------------------------------- */
+.principal ul,
+.principal ol {
+    padding-left: 1.5rem;
+}
+
+.principal li {
+    margin-bottom: 6px;
+}
+
+/* Lista de definição */
+dl {
+    margin: 1.2rem 0;
+}
+
+dt {
+    font-weight: bold;
+    color: var(--azul-noite);
+    margin-top: 0.8rem;
+}
+
+dd {
+    margin: 0 0 0.4rem 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   13. RODAPÉ
+   -------------------------------------------------------------------------- */
+.rodape {
+    border-top: 1px solid var(--borda);
+    background-color: var(--branco);
+    padding: 24px 1rem;
+    margin-top: 2rem;
+}
+
+.rodape__interno {
+    max-width: 1440px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+.rodape h2 {
+    font-family: var(--fonte-corpo);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--texto-suave);
+    margin: 0 0 10px;
+}
+
+.rodape ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    margin: 0 0 14px;
+}
+
+/* --------------------------------------------------------------------------
+   14. RESPONSIVIDADE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1000px) {
+    .conteudo {
+        grid-template-areas:
+            "principal"
+            "lateral"
+            "ancora";
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .lateral {
+        border-right: none;
+        border-top: 1px solid var(--borda);
+        padding-right: 0;
+        padding-top: 1rem;
+    }
+
+    .ancoras {
+        border-left: none;
+        border-top: 1px solid var(--borda);
+        padding-left: 0;
+        padding-top: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo img {
+        width: 150px;
+    }
+
+    .principal h1 {
+        font-size: 1.6rem;
+    }
+
+    .cabecalho__interno {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   15. ACESSIBILIDADE: MOVIMENTO REDUZIDO (WCAG 2.3.3)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   16. ACESSIBILIDADE: ALTO CONTRASTE FORÇADO (Windows)
+   -------------------------------------------------------------------------- */
+@media (forced-colors: active) {
+    .lateral a[aria-current="page"],
+    .skip-link,
+    .barra button {
+        border: 2px solid ButtonText;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   17. IMPRESSÃO
+   -------------------------------------------------------------------------- */
+@media print {
+    .barra,
+    .lateral,
+    .ancoras,
+    .skip-link,
+    .rodape ul {
+        display: none;
+    }
+
+    body {
+        color: #000;
+        background: #fff;
+        font-size: 12pt;
+    }
+
+    .conteudo {
+        display: block;
+        padding: 0;
+    }
+
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #444;
+    }
+}

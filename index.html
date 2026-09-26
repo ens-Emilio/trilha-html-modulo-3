@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Naruto Clássico — enciclopédia livre sobre o mangá e o primeiro anime de Naruto, criado por Masashi Kishimoto. Semântica e acessibilidade.">
+    <title>Naruto Clássico — NarutoPédia</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Skip link: permite pular a navegação repetida. É o primeiro elemento focável. -->
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+    <!-- ==================== CABEÇALHO ==================== -->
+    <header class="cabecalho">
+        <div class="cabecalho__interno">
+            <a class="logo" href="index.html">
+                <img src="assets/images/logo.svg" alt="NarutoPédia — logo com espiral laranja ao lado do nome">
+            </a>
+        </div>
+    </header>
+
+    <!-- ==================== BARRA DE PESQUISA ==================== -->
+    <div class="barra">
+        <form class="barra__interno" role="search" action="#" method="get">
+            <label for="campo-busca" class="visualmente-oculto">Buscar neste site</label>
+            <input type="search" id="campo-busca" name="q"
+                   placeholder="Pesquisar na NarutoPédia" autocomplete="off">
+            <button type="submit">Pesquisar</button>
+        </form>
+    </div>
+
+    <!-- ==================== CONTEÚDO ==================== -->
+    <div class="conteudo">
+
+        <!-- Conteúdo principal vem primeiro na ordem do documento:
+             leitores de tela e quem usa teclado chegam ao texto antes da navegação.
+             A posição visual na grade é definida pelo CSS (grid-template-areas). -->
+        <main class="principal" id="conteudo-principal" tabindex="-1">
+
+            <article>
+                <h1>Naruto Clássico</h1>
+
+                <figure class="hero">
+                    <img src="assets/images/hero-naruto.svg" width="1200" height="320"
+                         alt="Ilustração de um ninja mascarado saltando sobre os telhados de uma vila ninja ao pôr do sol, com uma espiral laranja ao fundo.">
+                    <figcaption>
+                        Cenário típico do início da série: ninjas da <strong>Vila da Folha</strong>
+                        em missão noturna.
+                    </figcaption>
+                </figure>
+
+                <p>
+                    <strong>Naruto Clássico</strong> é a denominação informal dada ao primeiro
+                    bloco da franquia <i>Naruto</i>, criada pelo mangaká
+                    <a href="https://pt.wikipedia.org/wiki/Masashi_Kishimoto" rel="external">Masashi Kishimoto</a>.
+                    Abrange o mangá publicado entre <time datetime="1999">1999</time> e
+                    <time datetime="2007">2007</time> e o anime transmitido de
+                    <time datetime="2002-10-03">3 de outubro de 2002</time> a
+                    <time datetime="2007-02-13">13 de fevereiro de 2007</time>.
+                </p>
+
+                <p>
+                    O período é chamado de <mark>Clássico</mark> porque antecede o arco de
+                    tempos modernos, conhecido como <i>Naruto Shippūden</i>. A obra acompanha
+                    <strong>Naruto Uzumaki</strong>, um jovem ninja rejeitado por sua vila,
+                    enquanto treina para se tornar <abbr title="Líder ou mestre ninjado da vila oculta">Hokage</abbr>
+                    — o cargo mais alto entre os ninjas.
+                </p>
+
+                <!-- ---------------- SINOPSE ---------------- -->
+                <section aria-labelledby="t-sinopse">
+                    <h2 id="t-sinopse">Sinopse</h2>
+
+                    <p>
+                        A história se passa em um mundo onde organizações militares escondidas
+                        — as <strong>vilas ocultas</strong> — treinam ninjas para cumprir missões
+                        a serviço de seus respectivos países. Naruto Uzumaki é filho do Quarto
+                        Hokage e carrega dentro de si a
+                        <strong>Nove-Caudas</strong> (<abbr title="Kyuubi">Kyūbi</abbr>), uma
+                        besta-cão capaz de destruir uma vila inteira.
+                    </p>
+
+                    <p>
+                        Por causa dessa prisão forçada, Naruto é evitado pelos moradores.
+                        Apesar disso, ele rejeita o isolamento e responde ao preconceito com
+                        determinação e humor. Ao concluir a academia ninja, é integrado à
+                        <strong>Equipe 7</strong>, sob o comando de Kakashi Hatake, ao lado de
+                        Sakura Haruno e do rival <strong>Sasuke Uchiha</strong>.
+                    </p>
+
+                    <blockquote>
+                        <p>
+                            “Eu não rejeito a vila. Aqueles que rejeitam a mim é que são o
+                            verdadeiro problema — e é por isso que eu vou me tornar Hokage.”
+                        </p>
+                        <footer>— paráfrase do protagonista, adaptada do anime</footer>
+                    </blockquote>
+                </section>
+
+                <!-- ---------------- PRODUÇÃO ---------------- -->
+                <section aria-labelledby="t-producao">
+                    <h2 id="t-producao">Produção</h2>
+
+                    <h3 id="t-origem">Origem</h3>
+
+                    <p>
+                        Kishimoto começou a esboçar a ideia quando ainda estudava na faculdade
+                        de artes, buscando um projeto que pudesse ser publicado em revista. A
+                        proposta original era uma história mais curta e humorística; a vila
+                        ninja foi adicionada depois, quando o autor percebeu que precisava de
+                        um cenário capaz de sustentar arcos mais longos.
+                    </p>
+
+                    <p>
+                        O traço sofreu mudanças entre o <i>one-shot</i> piloto e o seriado
+                        definitivo. Naruto ganhou óculos na versão inicial — marca que foi
+                        removida para facilitar o desenho da expressão facial do personagem.
+                    </p>
+
+                    <h3 id="t-publicacao">Publicação</h3>
+
+                    <p>
+                        O mangá foi serializado semanalmente na revista
+                        <a href="https://en.wikipedia.org/wiki/Weekly_Shonen_Jump" rel="external"><i>Weekly Shōnen Jump</i></a>,
+                        da <abbr title="Shueisha, editora japonesa de revistas de mangá">Shueisha</abbr>,
+                        entre 3 de setembro de 1999 e 10 de novembro de 2014, reunindo
+                        <strong>72 volumes</strong> na coleta oficial. O primeiro bloco — o
+                        <i>Clássico</i> — ocupa aproximadamente os <strong>volumes 1 a 27</strong>.
+                    </p>
+
+                    <div class="aviso" role="note" aria-label="Nota sobre a tradução">
+                        <h3>Nota sobre os nomes</h3>
+                        <p>
+                            Durante a exibição no ocidente, os nomes foram adaptados: a vila
+                            <i>Konohagakure</i> passou a <strong>Aldeia da Folha</strong> e o termo
+                            <i>shinobi</i> foi traduzido por “ninja”. Adaptações semelhantes
+                            ocorrem com <abbr title="Taijutsu: combate corpo a corpo">taijutsu</abbr>,
+                            <abbr title="Ninjutsu: técnicas baseadas em chakra">ninjutsu</abbr> e
+                            <abbr title="Genjutsu: técnicas de ilusão">genjutsu</abbr>.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ---------------- ENREDO ---------------- -->
+                <section aria-labelledby="t-enredo">
+                    <h2 id="t-enredo">Enredo</h2>
+
+                    <h3 id="t-chakra">Magia ninja e chakra</h3>
+
+                    <p>
+                        O sistema de poder baseia-se no <strong>chakra</strong>, energia
+                        formada pela combinação de energia física e mental. Os ninjas canalizam
+                        chakra pelas mãos para executar técnicas classificadas em três categorias
+                        básicas: <mark>taijutsu</mark> (combate físico),
+                        <mark>ninjutsu</mark> (técnicas ofensivas e de transformação) e
+                        <mark>genjutsu</mark> (ilusões que manipulam os sentidos do adversário).
+                    </p>
+
+                    <p>
+                        Existe ainda uma quarta categoria, aplicada apenas por ninjas de nível
+                        elevado: o <strong>kekkei genkai</strong>, traço herdado
+                        geneticamente que não pode ser aprendido por treino.
+                    </p>
+
+                    <h3 id="t-vilas">As cinco nações</h3>
+
+                    <p>
+                        O continente é dividido em cinco grandes nações, cada uma abrigando uma
+                        vila ocultas e comandada por um <abbr title="Líder ninjado da vila">Kage</abbr>.
+                        O mapa abaixo mostra a disposição dessas vilas:
+                    </p>
+
+                    <figure>
+                        <img src="assets/images/mapa-vilas.svg" width="600" height="380"
+                             alt="Mapa esquemático do continente ninja com as cinco vilas marcadas: Vila da Folha, Vila da Névoa, Vila da Areia, Vila da Nuvem e Vila da Pedra.">
+                        <figcaption>
+                            As cinco vilas ocultas e suas posições relativas no continente.
+                        </figcaption>
+                    </figure>
+
+                    <div class="tabela-envolucro">
+                        <table>
+                            <caption>As cinco grandes nações ninja e suas vilas ocultas</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nação</th>
+                                    <th scope="col">Vila oculta</th>
+                                    <th scope="col">Elemento</th>
+                                    <th scope="col">Título do líder</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">País do Fogo</th>
+                                    <td>Konohagakure (Folha)</td>
+                                    <td>Fogo</td>
+                                    <td>Hokage</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">País do Vento</th>
+                                    <td>Sunagakure (Areia)</td>
+                                    <td>Vento</td>
+                                    <td>Kazekage</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">País da Terra</th>
+                                    <td>Iwagakure (Pedra)</td>
+                                    <td>Terra</td>
+                                    <td>Tsuchikage</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">País do Trovão</th>
+                                    <td>Kumogakure (Nuvem)</td>
+                                    <td>Trovão</td>
+                                    <td>Raikage</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">País da Água</th>
+                                    <td>Kirigakure (Névoa)</td>
+                                    <td>Água</td>
+                                    <td>Mizukage</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">
+                                        <small>
+                                            O <strong>Kaze</strong>kage e o <strong>Ra</strong>ikage
+                                            recebem o prefixo do elemento no nome. Já os demais
+                                            usam o nome do próprio elemento.
+                                        </small>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ---------------- PERSONAGENS ---------------- -->
+                <section aria-labelledby="t-personagens">
+                    <h2 id="t-personagens">Personagens principais</h2>
+
+                    <figure>
+                        <img src="assets/images/equipe7.svg" width="600" height="300"
+                             alt="Ilustração de três ninjas lado a lado representando a Equipe 7: um de jaqueta laranja com cachecol, um com cabelo escuro e uma de cabelo rosado.">
+                        <figcaption>
+                            A <strong>Equipe 7</strong>, formada por Naruto, Sasuke e Sakura
+                            sob a liderança de Kakashi.
+                        </figcaption>
+                    </figure>
+
+                    <h3 id="t-equipe7">Equipe 7</h3>
+
+                    <p>
+                        A Equipe 7 é o grupo de ninjas em torno do qual gira toda a trama.
+                        Seus integrantes são apresentados já na primeira missão da série:
+                    </p>
+
+                    <ul>
+                        <li>
+                            <strong>Naruto Uzumaki</strong> — portador da Nove-Caudas. Detesta
+                            ser ignorado e luta por reconhecimento.
+                        </li>
+                        <li>
+                            <strong>Sasuke Uchiha</strong> — último sobrevivente de um clã
+                            exterminado. Persegue vingança contra o próprio irmão.
+                        </li>
+                        <li>
+                            <strong>Sakura Haruno</strong> — ninja de suporte, dedicada aos
+                            estudos na academia.
+                        </li>
+                        <li>
+                            <strong>Kakashi Hatake</strong> — sensei da equipe, veterano de
+                            múltiplas guerras.
+                        </li>
+                    </ul>
+
+                    <h3 id="t-kage">Os Hokage</h3>
+
+                    <dl>
+                        <dt>Primeiro Hokage</dt>
+                        <dd>Hashirama Senju, fundador da Vila da Folha, conhecido por técnicas de madeira.</dd>
+                        <dt>Segundo Hokage</dt>
+                        <dd>Tobirama Senju, irmão do fundador, responsável pelo sistema acadêmico ninja.</dd>
+                        <dt>Terceiro Hokage</dt>
+                        <dd>Hiruzen Sarutobi, o “Professor”, comandou a vila por mais de uma década.</dd>
+                        <dt>Quarto Hokage</dt>
+                        <dd>Minato Namikaze, pai de Naruto, selou a Nove-Caudas ao custo da própria vida.</dd>
+                    </dl>
+                </section>
+
+                <!-- ---------------- ARCS ---------------- -->
+                <section aria-labelledby="t-arcs">
+                    <h2 id="t-arcs">Principais arcos narrativos</h2>
+
+                    <ol>
+                        <li>
+                            <strong>Vila da Onda</strong> — primeira missão da Equipe 7, contra
+                            um grupo de mercenários que controla uma ponte estratégica.
+                        </li>
+                        <li>
+                            <strong>Prova de Iniciação</strong> — torneio entre alunos de todas
+                            as vilas para ascender à categoria <i>chūnin</i>.
+                        </li>
+                        <li>
+                            <strong>Busca por Tsunade</strong> — recrutamento da nova Hokage
+                            junto ao médico lendário Jiraiya.
+                        </li>
+                        <li>
+                            <strong>Exame Chūnin (fase final)</strong> — confrontos decisivos,
+                            incluindo a invasão da vila pelo vilarejo oculto da areia.
+                        </li>
+                        <li>
+                            <strong>Retirada de Sasuke</strong> — última missão do arco clássico,
+                            quando o rival parte para a vila da névoa em busca de poder.
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- ---------------- RECEPÇÃO ---------------- -->
+                <section aria-labelledby="t-recepcao">
+                    <h2 id="t-recepcao">Recepção</h2>
+
+                    <p>
+                        <em>Naruto</em> tornou-se um dos mangás mais vendidos da
+                        <a href="https://pt.wikipedia.org/wiki/Shueisha" rel="external">Shueisha</a>,
+                        com dezenas de milhões de volumes comercializados. A série é frequentemente
+                        citada ao lado de <i>One Piece</i> e <i>Bleach</i> como uma das obras
+                        definidoras da <abbr title="Trio de mangás shōnen publicados na Weekly Shōnen Jump na década de 2000">tria shōnen</abbr>
+                        dos anos 2000.
+                    </p>
+
+                    <p>
+                        Críticos destacam o desenvolvimento dos antagonistas: muitos vilões da
+                        série são apresentados como reflexos distorcidos do próprio protagonista,
+                        o que dá peso moral às batalhas. Por outro lado, o anime é
+                        <del>amplamente elogiado por seu ritmo</del> criticado pelo uso frequente
+                        de episódios de <strong>filler</strong> — trechos não presentes no mangá.
+                    </p>
+
+                    <h3 id="t-premios">Prêmios</h3>
+
+                    <ul>
+                        <li>Prêmio de Mangá Shōnen da <abbr title="Shueisha, editora japonesa">Shueisha</abbr> — vencedor em 2003</li>
+                        <li>Indicado ao <abbr title="Premiação japonesa de mangá">Premio Tezuka Osamu</abbr> de melhor obra</li>
+                        <li>Reconhecido como um dos maiores sucessos da revista <i>Weekly Shōnen Jump</i></li>
+                    </ul>
+                </section>
+
+                <!-- ---------------- CURIOSIDADES ---------------- -->
+                <section aria-labelledby="t-curiosidades">
+                    <h2 id="t-curiosidades">Curiosidades</h2>
+
+                    <ul>
+                        <li>
+                            A cor preferida de Naruto é o <strong>laranja</strong>, a mesma usada
+                            pela própria equipe de produção.
+                        </li>
+                        <li>
+                            O sobrenome <i>Uzumaki</i> significa “espiral” no japonês — presente
+                            na cauda do rapaz e na insignia da vila.
+                        </li>
+                        <li>
+                            Kishimoto desenha as mãos das personagens como sendo a parte mais
+                            difícil de qualquer painel.
+                        </li>
+                        <li>
+                            A quantidade de <mark>número de episódios</mark> do primeiro anime
+                            chegou a <strong>220</strong> antes de iniciar a segunda fase.
+                        </li>
+                        <li>
+                            O personagem Kakashi nunca é visto sem máscara durante toda a série.
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- ---------------- TRANSMISSÃO ---------------- -->
+                <section aria-labelledby="t-transmissao">
+                    <h2 id="t-transmissao">Transmissão</h2>
+
+                    <div class="tabela-envolucro">
+                        <table>
+                            <caption>Períodos de exibição dos animes da franquia no Japão</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Série</th>
+                                    <th scope="col">Período</th>
+                                    <th scope="col">Episódios</th>
+                                    <th scope="col">Rede</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Naruto (Clássico)</th>
+                                    <td>out/2002 — fev/2007</td>
+                                    <td>220</td>
+                                    <td>TV Tokyo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Naruto Shippūden</th>
+                                    <td>fev/2007 — mar/2017</td>
+                                    <td>500</td>
+                                    <td>TV Tokyo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Boruto</th>
+                                    <td>abr/2017 — mar/2023</td>
+                                    <td>293</td>
+                                    <td>TV Tokyo</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">
+                                        <small>
+                                            A produção do anime ficou a cargo do estúdio
+                                            <strong>Pierrot</strong>, que assinou igualmente
+                                            a continuação.
+                                        </small>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ---------------- MÍDIAS RELACIONADAS ---------------- -->
+                <section aria-labelledby="t-midias">
+                    <h2 id="t-midias">Mídias relacionadas</h2>
+
+                    <figure>
+                        <img src="assets/images/rasengan.svg" width="400" height="400"
+                             alt="Ilustração de uma esfera de energia azul com espirais concêntricas girando em seu interior.">
+                        <figcaption>
+                            Representação de uma técnica de esfera giratória, símbolo do próprio
+                            título da obra.
+                        </figcaption>
+                    </figure>
+
+                    <ul>
+                        <li>
+                            <strong>Mangá</strong> — 72 volumes compilados pela Shueisha.
+                        </li>
+                        <li>
+                            <strong>Anime</strong> — produção da Pierrot para a TV Tokyo.
+                        </li>
+                        <li>
+                            <strong>Filmes</strong> — a franquia possui mais de dez produções
+                            cinematográficas.
+                        </li>
+                        <li>
+                            <strong>Jogos</strong> — diversas adaptações para consoles e
+                            dispositivos móveis.
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- ---------------- VER TAMBÉM ---------------- -->
+                <section aria-labelledby="t-vertambem">
+                    <h2 id="t-vertambem">Ver também</h2>
+                    <ul>
+                        <li><a href="personagens.html">Personagens de Naruto Clássico</a></li>
+                        <li><a href="temporadas.html">Temporadas e episódios</a></li>
+                        <li><a href="https://pt.wikipedia.org/wiki/Naruto" rel="external">Naruto (enciclopédia livre)</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Weekly_Shonen_Jump" rel="external">Weekly Shōnen Jump (em inglês)</a></li>
+                    </ul>
+                </section>
+
+                <!-- ---------------- REFERÊNCIAS ---------------- -->
+                <section aria-labelledby="t-referencias">
+                    <h2 id="t-referencias">Referências</h2>
+
+                    <ol class="referencias">
+                        <li>
+                            KISHIMOTO, Masashi. <i>Naruto</i>. Tóquio: Shueisha, 1999–2014.
+                            72 volumes.
+                        </li>
+                        <li>
+                            SHUEISHA. <i>Weekly Shōnen Jump</i>. Tóquio: Shueisha, edição de
+                            1999.
+                        </li>
+                        <li>
+                            PIERROT. <i>Naruto</i>. Tóquio: TV Tokyo, 2002–2007. 220 episódios.
+                        </li>
+                    </ol>
+                </section>
+
+            </article>
+        </main>
+
+        <!-- ==================== LATERAL (navegação) ==================== -->
+        <aside class="lateral" aria-labelledby="t-lateral">
+            <h2 id="t-lateral">Páginas relacionadas</h2>
+
+            <nav aria-label="Navegação do site">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Naruto Clássico</a></li>
+                    <li><a href="personagens.html">Personagens</a></li>
+                    <li><a href="temporadas.html">Temporadas</a></li>
+                </ul>
+            </nav>
+
+            <nav aria-label="Links externos de referência" style="margin-top: 1.5rem;">
+                <h3>Referências externas</h3>
+                <ul>
+                    <li><a href="https://pt.wikipedia.org/wiki/Naruto" rel="external">Naruto (Wikipédia)</a></li>
+                    <li><a href="https://pt.wikipedia.org/wiki/Masashi_Kishimoto" rel="external">Masashi Kishimoto</a></li>
+                    <li><a href="https://pt.wikipedia.org/wiki/Shueisha" rel="external">Shueisha</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- ==================== ÂNCORAS ==================== -->
+        <aside class="ancoras" aria-labelledby="t-ancoras">
+            <h2 id="t-ancoras">Neste artigo</h2>
+
+            <nav aria-label="Índice do artigo">
+                <ul>
+                    <li><a href="#t-sinopse">Sinopse</a></li>
+                    <li><a href="#t-producao">Produção</a></li>
+                    <li><a href="#t-enredo">Enredo</a></li>
+                    <li><a href="#t-personagens">Personagens</a></li>
+                    <li><a href="#t-arcs">Arcos narrativos</a></li>
+                    <li><a href="#t-recepcao">Recepção</a></li>
+                    <li><a href="#t-curiosidades">Curiosidades</a></li>
+                    <li><a href="#t-transmissao">Transmissão</a></li>
+                    <li><a href="#t-midias">Mídias relacionadas</a></li>
+                    <li><a href="#t-vertambem">Ver também</a></li>
+                    <li><a href="#t-referencias">Referências</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+    </div>
+
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer class="rodape">
+        <div class="rodape__interno">
+            <h2>Navegação do rodapé</h2>
+            <ul>
+                <li><a href="index.html">Página principal</a></li>
+                <li><a href="personagens.html">Personagens</a></li>
+                <li><a href="temporadas.html">Temporadas</a></li>
+                <li><a href="#conteudo-principal">Voltar ao topo do conteúdo</a></li>
+            </ul>
+
+            <p>
+                <small>
+                    Texto de estudo. Site criado como Desafio de Projeto do
+                    <abbr title="Digital Innovation One">Módulo III</abbr> da trilha de HTML,
+                    com foco em <strong>semântica</strong> e <strong>acessibilidade</strong>.
+                    Conteúdo fictício e não oficial — todos os direitos pertencem a seus
+                    autores originais.
+                </small>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
